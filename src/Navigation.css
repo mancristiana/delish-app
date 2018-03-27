@@ -1,0 +1,21 @@
+.navbar-nav.w-100 {
+  width: auto!important;
+}
+
+a.active {
+  background-color: #2e2e2e;
+}
+
+.navigation-item {
+  margin: 0 1rem;
+}
+
+.navigation-item>img {
+  display: block;
+  margin: 0 auto;
+  height: 2rem;
+}
+
+.navigation-item>span {
+
+}
