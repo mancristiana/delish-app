@@ -4,7 +4,7 @@ import recipes from './assets/recipes.svg';
 import ingredients from './assets/ingredients.svg';
 import './Navigation.css';
 
-const NavigationItem = (props) => (
+const NavigationItem = props => (
   <NavItem>
     <NavLink className="nav-link" to={props.to} exact={true}>
       <div className="navigation-item">
@@ -13,21 +13,20 @@ const NavigationItem = (props) => (
       </div>
     </NavLink>
   </NavItem>
-)
+);
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
     this.navItems = [
       {
-        to: "/",
-        title: "Recipes",
+        to: '/',
+        title: 'Recipes',
         image: recipes
-
       },
       {
-        to: "/ingredients",
-        title: "Ingredients",
+        to: '/ingredients',
+        title: 'Ingredients',
         image: ingredients
       }
     ];
@@ -50,9 +49,8 @@ class Navigation extends Component {
             />
           ))}
         </NavbarNav>
-
       </Navbar>
-    )
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 .navbar-nav.w-100 {
-  width: auto!important;
+  width: auto !important;
 }
 
 a.active {
@@ -10,12 +10,11 @@ a.active {
   margin: 0 1rem;
 }
 
-.navigation-item>img {
+.navigation-item > img {
   display: block;
   margin: 0 auto;
   height: 2rem;
 }
 
-.navigation-item>span {
-
+.navigation-item > span {
 }

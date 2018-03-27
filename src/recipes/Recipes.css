@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .gradient {
   background: linear-gradient(40deg, #ffd86f, #fc6262);
 }
