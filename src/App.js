@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './Navigation';
-import Recipes from './recipes/Recipes';
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-);
+import { Recipes, Ingredients } from './routes';
 
 class App extends Component {
   render() {
@@ -16,8 +10,10 @@ class App extends Component {
       <Router>
         <div className="app">
           <Navigation />
-          <Route exact path="/" component={Recipes} />
-          <Route path="/about" component={About} />
+          <div className="container">
+            <Route exact path="/" component={Recipes} />
+            <Route path="/ingredients" component={Ingredients} />
+          </div>
         </div>
       </Router>
     );

@@ -21,6 +21,7 @@ class Recipes extends Component {
           icon="search"
           type="search"
         />
+
         <div className="card-columns">
           <Card className="hoverable">
             <CardBody className="text-center">
