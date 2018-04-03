@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, NavLink, NavbarBrand, NavbarNav } from 'mdbreact';
-import recipes from './assets/recipes.svg';
-import ingredients from './assets/ingredients.svg';
+import { Navbar, NavItem, NavbarBrand, NavLink, NavbarNav } from 'mdbreact';
+import recipes from './../../assets/recipes.svg';
+import ingredients from './../../assets/ingredients.svg';
 import './Navigation.css';
 
 const NavigationItem = props => (

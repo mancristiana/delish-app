@@ -18,6 +18,7 @@ class Ingredients extends Component {
           'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/olive-oil.jpg'
       }
     ];
+
     return (
       <div className="container-fluid">
         <IngredientsList list={list} />

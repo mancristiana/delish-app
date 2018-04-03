@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardImage,
-  CardTitle,
-  Fa,
-  Mask,
-  View,
-  Zoom
-} from 'mdbreact';
+import { Card, CardBody, CardImage, CardTitle, Fa, Mask, View } from 'mdbreact';
 import './Ingredients.css';
 
 class IngredientsItem extends Component {
