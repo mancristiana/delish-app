@@ -45,7 +45,8 @@ export function removeIngredient(id) {
 // MODALS
 export function openModal(modal) {
   return {
-    type: 'OPEN_MODAL_REQUESTED'
+    type: 'OPEN_MODAL',
+    modal
   };
 }
 
