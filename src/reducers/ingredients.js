@@ -1,6 +1,8 @@
 function ingredients(state = [], action) {
-  console.log('INGREDIENTS REDUCER', state, action);
-  return state;
+  switch (action.type) {
+    default:
+      return state;
+  }
 }
 
 export default ingredients;

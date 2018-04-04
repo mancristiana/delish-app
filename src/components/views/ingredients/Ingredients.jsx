@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
+import { Button } from 'mdbreact';
+import uuid from 'uuid/v1';
+import { mapStoreToProps } from './../../../utils';
 import IngredientsList from './IngredientsList';
+import IngredientModal from './../../modals/AddIngredientModal';
 import './Ingredients.css';
 
 class Ingredients extends Component {
-  render() {
-    const list = [
-      {
-        _id: '5abe672d87200c146c12de37',
-        name: 'Tomato',
-        image:
-          'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/tomato.jpg'
-      },
-      {
-        _id: '5abf796b606df6000468c761',
-        name: 'Olive Oil',
-        image:
-          'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/olive-oil.jpg'
-      }
-    ];
+  openAddModal() {
+    this.props.openModal({
+      id: uuid(),
+      title: 'Add new ingredient',
+      content: <IngredientModal />,
+      onCancel: () => console.log('onCancel'),
+      onDelete: () => console.log('onDelete')
+    });
+  }
 
+  render() {
     return (
       <div className="container-fluid">
-        <IngredientsList list={list} />
+        <Button
+          className="ingredients-add"
+          color="orange"
+          onClick={this.openAddModal.bind(this)}>
+          Add
+        </Button>
+        <IngredientsList {...this.props} />
       </div>
     );
   }
 }
 
-export default Ingredients;
+const IngredientsContainer = mapStoreToProps(Ingredients);
+
+export default IngredientsContainer;

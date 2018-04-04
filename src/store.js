@@ -12,8 +12,22 @@ export const history = createHistory();
 
 // Create object for default data
 const defaultState = {
-  ingredients: [],
-  recipes: []
+  ingredients: [
+    {
+      _id: '5abe672d87200c146c12de37',
+      name: 'Tomato',
+      image:
+        'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/tomato.jpg'
+    },
+    {
+      _id: '5abf796b606df6000468c761',
+      name: 'Olive Oil',
+      image:
+        'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/olive-oil.jpg'
+    }
+  ],
+  recipes: [],
+  modals: []
 };
 
 const middleware = [
