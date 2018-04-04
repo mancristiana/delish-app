@@ -17,6 +17,10 @@ class Ingredients extends Component {
     });
   }
 
+  componentDidMount() {
+    this.props.fetchIngredients();
+  }
+
   render() {
     return (
       <div className="container-fluid">

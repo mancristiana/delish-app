@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-import { COLORS } from './../../utils';
+import { Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 import ModalActions from './ModalActions';
 
 class BaseModal extends Component {

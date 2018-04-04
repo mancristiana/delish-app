@@ -1,8 +1,6 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
-import ReduxThunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
+import thunk from 'redux-thunk';
 // Import the root reducer
 import rootReducer from './reducers/index';
 
@@ -12,36 +10,28 @@ export const history = createHistory();
 
 // Create object for default data
 const defaultState = {
-  ingredients: [
-    {
-      _id: '5abe672d87200c146c12de37',
-      name: 'Tomato',
-      image:
-        'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/tomato.jpg'
-    },
-    {
-      _id: '5abf796b606df6000468c761',
-      name: 'Olive Oil',
-      image:
-        'https://s3.eu-central-1.amazonaws.com/delish-app-uploads/ingredients/olive-oil.jpg'
-    }
-  ],
+  ingredients: [],
   recipes: [],
   modals: []
 };
 
-const middleware = [
-  // Use ReduxThunk middleware to dispatch async functions
-  ReduxThunk,
-
-  // Build the middleware for intercepting and dispatching navigation actions
-  routerMiddleware(history)
-];
-
 // Include devToolsExtension
 // See: https://github.com/zalmoxisus/redux-devtools-extension
-const enhancers = composeWithDevTools(applyMiddleware(...middleware));
+// See: https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f
 
-const store = createStore(rootReducer, defaultState, enhancers);
+const enhancers = [];
+const middleware = [thunk, routerMiddleware(history)];
+
+if (process.env.NODE_ENV === 'development') {
+  const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+
+  if (typeof devToolsExtension === 'function') {
+    enhancers.push(devToolsExtension());
+  }
+}
+
+const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
+
+const store = createStore(rootReducer, defaultState, composedEnhancers);
 
 export default store;

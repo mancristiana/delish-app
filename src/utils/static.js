@@ -11,3 +11,5 @@ export const BUTTONS = {
   SUBMIT: 'Submit',
   DELETE: 'Delete'
 };
+
+export const API = 'https://delish-recipe-api.herokuapp.com/api';
