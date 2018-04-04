@@ -1,19 +1,19 @@
-import { getIngredients } from './../data/ingredients';
+import { getIngredients, deleteIngredient } from './../data/ingredients';
 
 // INGREDIENTS
 export function fetchIngredients() {
   return dispatch => {
     dispatch({
-      type: 'FETCH_INGREDENTS_REQUESTED'
+      type: 'FETCH_INGREDIENTS_REQUESTED'
     });
     getIngredients().then(
       response => {
         return dispatch({
-          type: 'FETCH_INGREDENTS_SUCCEEDED',
+          type: 'FETCH_INGREDIENTS_SUCCEEDED',
           ingredients: response
         });
       },
-      error => dispatch({ type: 'FETCH_INGREDENTS_FAILED', error: error })
+      error => dispatch({ type: 'FETCH_INGREDIENTS_FAILED', error: error })
     );
   };
 }
@@ -36,9 +36,21 @@ export function editIngredient(ingredient) {
 
 // remove ingredient
 export function removeIngredient(id) {
-  return {
-    type: 'REMOVE_INGREDIENT',
-    id
+  return dispatch => {
+    dispatch({
+      type: 'DELETE_INGREDIENT_REQUESTED',
+      id
+    });
+    deleteIngredient(id).then(
+      response => {
+        return dispatch({
+          type: 'DELETE_INGREDIENT_SUCCEEDED',
+          response: response,
+          id
+        });
+      },
+      error => dispatch({ type: 'DELETE_INGREDIENT_FAILED', error: error })
+    );
   };
 }
 

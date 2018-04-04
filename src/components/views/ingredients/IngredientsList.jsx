@@ -9,7 +9,7 @@ class IngredientsList extends Component {
     return (
       <div className="ingredients-list card-deck">
         {this.props.ingredients.map((item, key) => {
-          return <IngredientsItem key={key} item={item} {...actions} />;
+          return <IngredientsItem key={key} item={item} {...this.props} />;
         })}
       </div>
     );

@@ -12,3 +12,16 @@ export const getIngredients = () => {
     error => Promise.reject(Error(error))
   );
 };
+
+export const deleteIngredient = id => {
+  return fetch(`${API}/ingredients/${id}`, { method: 'DELETE' }).then(
+    response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return Promise.reject(Error('error'));
+      }
+    },
+    error => Promise.reject(Error(error))
+  );
+};

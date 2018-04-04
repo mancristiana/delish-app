@@ -1,9 +1,9 @@
 function ingredients(state = [], action) {
   switch (action.type) {
-    case 'FETCH_INGREDENTS_SUCCEEDED':
+    case 'FETCH_INGREDIENTS_SUCCEEDED':
       return action.ingredients;
-
-      break;
+    case 'DELETE_INGREDIENT_REQUESTED':
+      return state.filter(ingredient => action.id !== ingredient._id);
     default:
       return state;
   }
