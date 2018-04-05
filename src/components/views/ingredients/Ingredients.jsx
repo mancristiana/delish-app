@@ -3,7 +3,7 @@ import { Button } from 'mdbreact';
 import uuid from 'uuid/v1';
 import { mapStoreToProps } from './../../../utils';
 import IngredientsList from './IngredientsList';
-import IngredientModal from './../../modals/AddIngredientModal';
+import IngredientModal from './../../modals/IngredientModal';
 import './Ingredients.css';
 
 class Ingredients extends Component {
@@ -11,9 +11,8 @@ class Ingredients extends Component {
     this.props.openModal({
       id: uuid(),
       title: 'Add new ingredient',
-      content: <IngredientModal />,
-      onCancel: () => console.log('onCancel'),
-      onDelete: () => console.log('onDelete')
+      content: <IngredientModal ingredient={null} />,
+      onSubmit: () => console.log('onSubmit')
     });
   }
 

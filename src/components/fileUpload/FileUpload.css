@@ -1,0 +1,47 @@
+.file-upload {
+  position: relative;
+  display: block;
+}
+
+.view img {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.file-upload__label {
+  display: block;
+  color: #fff;
+}
+
+.file-upload__label:hover {
+  cursor: pointer;
+}
+
+.file-upload__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.file-upload:hover .image-overlay {
+  opacity: 1;
+}

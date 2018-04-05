@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardImage, CardTitle, Fa, Mask, View } from 'mdbreact';
-import IngredientModal from './../../modals/AddIngredientModal';
+import IngredientModal from './../../modals/IngredientModal';
 import uuid from 'uuid/v1';
 import './Ingredients.css';
 
@@ -27,7 +27,7 @@ class IngredientsItem extends Component {
     this.props.openModal({
       id: editModalId,
       title: 'Edit ingredient',
-      content: <IngredientModal />,
+      content: <IngredientModal ingredient={item} />,
       onCancel: () => this.props.closeModal(editModalId),
       onDelete: () => this.openDeleteConfirmation(item, editModalId),
       onSubmit: () => console.log('onSubmit')
