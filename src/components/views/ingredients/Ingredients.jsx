@@ -7,6 +7,11 @@ import IngredientModal from './../../modals/IngredientModal';
 import './Ingredients.css';
 
 class Ingredients extends Component {
+  constructor(props) {
+    super(props);
+    this.openAddModal = this.openAddModal.bind(this);
+  }
+
   openAddModal() {
     this.props.openModal({
       id: uuid(),
@@ -26,7 +31,7 @@ class Ingredients extends Component {
         <Button
           className="ingredients-add"
           color="orange"
-          onClick={this.openAddModal.bind(this)}>
+          onClick={this.openAddModal}>
           Add
         </Button>
         <IngredientsList {...this.props} />
