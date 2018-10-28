@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, Fa } from 'mdbreact';
+import { Input } from 'mdbreact';
 import FileUpload from './../fileUpload/FileUpload';
 
 class IngredientModal extends Component {
